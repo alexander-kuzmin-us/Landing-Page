@@ -22,7 +22,8 @@
  * Define Global Variables
  * 
 */
-
+const sections = document.getElementsByTagName('section');
+console.log(sections);
 
 /**
  * End Global Variables
@@ -37,6 +38,7 @@
  * Begin Main Functions
  * 
 */
+
 
 // build the nav
 
