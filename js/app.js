@@ -22,8 +22,13 @@
  * Define Global Variables
  * 
 */
+
+// Get all sections and store in an array of sections
 const sections = document.getElementsByTagName('section');
-console.log(sections);
+// Get length of sections array
+const sectionLength = sections.length;
+// Get nav parent element and store in a variable
+const navParent = document.getElementById('navbar__list');
 
 /**
  * End Global Variables
@@ -31,7 +36,11 @@ console.log(sections);
  * 
 */
 
-
+// Create a nav element
+let navElement = (sectionID, sectionDataNav) => {
+    const el = `<li><a class="menu__link" href="#${sectionID}">${sectionDataNav}</a></li>`;
+    return el;
+}
 
 /**
  * End Helper Functions
@@ -41,6 +50,16 @@ console.log(sections);
 
 
 // build the nav
+const buildNav = () => {
+    for (let i = 0; i < sectionLength; i++) {
+        const sectionID = sections[i].id;
+        const sectionDataNav = sections[i].dataset.nav;
+        navParent.innerHTML += navElement(sectionID, sectionDataNav);
+    }
+}
+
+buildNav();
+
 
 
 // Add class 'active' to section when near top of viewport
