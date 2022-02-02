@@ -52,13 +52,13 @@ let navElement = (sectionID, sectionDataNav) => {
 // build the nav
 const buildNav = () => {
     for (let i = 0; i < sectionLength; i++) {
-        const sectionID = sections[i].id;
-        const sectionDataNav = sections[i].dataset.nav;
-        navParent.innerHTML += navElement(sectionID, sectionDataNav);
+        const sectionID = sections[i].id; // Get section ID from section array
+        const sectionDataNav = sections[i].dataset.nav; // Get section data-nav from section array
+        navParent.innerHTML += navElement(sectionID, sectionDataNav); // Add nav element to nav parent
     }
 }
 
-buildNav();
+buildNav(); // Call buildNav function
 
 
 
