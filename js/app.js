@@ -79,7 +79,21 @@ const addActiveClass = () => {
 document.addEventListener('scroll', addActiveClass);
 
 // Scroll to anchor ID using scrollTO event
+const scrollToSection = () => {
+    for (const section of sections) {
+        const sectionID = section.id; // Get section ID from section array
+        const sectionDataNav = section.dataset.nav; // Get section data-nav from section array
+        const navElement = document.querySelector(`a[href="#${sectionID}"]`); // Get nav element from nav parent
+        navElement.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector(`#${sectionID}`).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    }
+};
 
+scrollToSection(); // Call scrollToSection function
 
 /**
  * End Main Functions
