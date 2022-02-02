@@ -31,6 +31,7 @@ h1 {
         font-size: 7em;
         margin: 2em 4rem 1em;
     }
+
 }
 
 h2 {
@@ -122,6 +123,18 @@ section {
         padding: 4em;
     }
 }
+
+@media all and (min-width: 320px) and (max-width: 480px) {
+    .landing__container {
+        padding: 1em;
+    }
+    .navbar__menu ul {
+        padding-left: 0;
+        margin: 0;
+        text-align: center;
+    }
+}
+
 
 section:nth-of-type(even) .landing__container {
     margin-right: 0;

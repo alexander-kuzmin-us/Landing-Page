@@ -40,7 +40,7 @@ const navParent = document.getElementById('navbar__list');
 let navElement = (sectionID, sectionDataNav) => {
     const el = `<li><a class="menu__link" href="#${sectionID}">${sectionDataNav}</a></li>`;
     return el;
-}
+};
 
 /**
  * End Helper Functions
@@ -56,14 +56,27 @@ const buildNav = () => {
         const sectionDataNav = sections[i].dataset.nav; // Get section data-nav from section array
         navParent.innerHTML += navElement(sectionID, sectionDataNav); // Add nav element to nav parent
     }
-}
+};
 
 buildNav(); // Call buildNav function
 
 
 
 // Add class 'active' to section when near top of viewport
+const addActiveClass = () => {
+    for (const section of sections) {
+        const sectionTop = section.getBoundingClientRect().top; // Get section top
+        const sectionBottom = section.getBoundingClientRect().bottom; // Get section bottom
+        if (sectionTop < 100 && sectionBottom > 100) {
+            section.classList.add('your-active-class');
+        } else {
+            section.classList.remove('your-active-class');
+        }
+    }
+};
 
+// Make sections active when scrolling
+document.addEventListener('scroll', addActiveClass);
 
 // Scroll to anchor ID using scrollTO event
 
