@@ -1,13 +1,9 @@
 # Landing Page Project
 
-## Table of Contents
+[PROJECT SPECIFICATION](https://review.udacity.com/#!/rubrics/2658/view)
 
-* [Instructions](#instructions)
+## Description
 
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+This project has a multi-section landing page, with a dynamically updating navigational menu based on the amount of content that is added to the page.
+The project hase 4 sections that have been added to the page.
+The Navigation is built dynamically as an ```unordered list```. Start with empty ```ul``` and dynamically build navigation using ```Append, appendChild, and innerHTML```.
